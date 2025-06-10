@@ -39,3 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCurrentDate();
 });
+searchBtn.addEventListener('click', () => {
+    const city = cityInput.value.trim();
+    if (city) {
+        fetchWeatherData(city);
+    }
+});
+
+cityInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const city = cityInput.value.trim();
+        if (city) {
+            fetchWeatherData(city);
+        }
+    }
+});
