@@ -71,3 +71,12 @@ function updateCurrentWeather(data) {
     const iconCode = data.weather[0].icon;
     weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="icon">`;
 }
+function updateForecast(data) {
+    forecastContainer.innerHTML = '';
+    const dailyData = {};
+    data.list.forEach(entry => {
+        const date = entry.dt_txt.split(' ')[0];
+        if (!dailyData[date] && entry.dt_txt.includes('12:00:00')) {
+            dailyData[date] = entry;
+        }
+    });
