@@ -80,3 +80,23 @@ function updateForecast(data) {
             dailyData[date] = entry;
         }
     });
+
+     Object.keys(dailyData).slice(0, 5).forEach(date => {
+        const item = dailyData[date];
+        const day = new Date(item.dt_txt).toLocaleDateString('en-US', { weekday: 'short' });
+        const icon = item.weather[0].icon;
+        const temp = Math.round(item.main.temp);
+
+        const forecastHTML = `
+            <div class="forecast-day">
+                <p>${day}</p>
+                <div class="forecast-icon"><img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="icon"></div>
+                <div class="forecast-temp">
+                    <span>${temp}°C</span>
+                </div>
+            </div>
+        `;
+        forecastContainer.innerHTML += forecastHTML;
+    });
+}
+
