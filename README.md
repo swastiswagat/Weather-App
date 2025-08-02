@@ -56,7 +56,7 @@ Or use `Live Server` in VS Code.
 
 You can try the WeatherSphere app live here:
 
-🔗 [Live Demo on GitHub Pages](https://swastiswagat.github.io/WeatherSphere/)
+🔗 [Live Demo ](https://weather-app-seven-sage-89.vercel.app/)
 
 
 ## 🙋‍♂️ Contributing
